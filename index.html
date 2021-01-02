@@ -2,15 +2,24 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/reset.css">
+
+        <script src="https://kit.fontawesome.com/4b998c3277.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <article id="tela">
-            <section id="cabecalho"></section>
-            <section id="imagemCapa"></section>
+        <article class="tela">
+            <section class="cabecalho">
+                <input type="checkbox" name="checkbox" value="none" id="botaoMagico">
+                <label class="fas fa-bars rotulo" for="botaoMagico"></label>
+                <i class="fas fa-search"></i>
+            </section>
+            <section class="imagemCapa"></section>
             <section id="listaMusicas"></section>
             <section id="playerCorpo"></section>
         </article>
+
+        <script src="/js/script.js"></script>
     </body>
 </html> 
