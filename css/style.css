@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+    width: 100vw;
+    height: auto;
+}
+
+#tela {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 0, 0);
+    overflow: hidden;
+}
+
+#cabecalho {
+    width: 100vw;
+}
+
+#imagemCapa {
+    width: 100vw;
+}
+
+#playerCorpo {
+    width: 100vw;
+    background: #111;
+}
+
+@media only screen and (max-width: 599px) {
+    
+    #cabecalho {
+        height: 10vh;
+    }
+    
+    #imagemCapa {
+        height: 50vh;
+    }
+    
+    #playerCorpo {
+        height: 40vh;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+
+    #cabecalho {
+        height: 10vh;
+    }
+
+    #imagemCapa {
+        height: 70vh;
+    }
+    
+    #playerCorpo {
+        height: 20vh;
+    }
+
+}
+
+@media only screen and (min-width: 900px) {
+   
+    #cabecalho {
+        height: 10vh;
+    }
+
+    #imagemCapa {
+        height: 70vh;
+    }
+    
+    #playerCorpo {
+        height: 20vh;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+
+    #cabecalho {
+        height: 10vh;
+    }
+
+    #imagemCapa {
+        height: 80vh;
+    }
+    
+    #playerCorpo {
+        height: 10vh;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+
+    #cabecalho {
+        height: 10vh;
+    }
+
+    #imagemCapa {
+        height: 80vh;
+    }
+    
+    #playerCorpo {
+        height: 10vh;
+    }
+    
+}
