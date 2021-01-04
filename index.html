@@ -11,15 +11,21 @@
     <body>
         <article class="tela">
             <section class="cabecalho">
-                <input type="checkbox" name="checkbox" value="none" id="botaoMagico">
-                <label class="fas fa-bars rotulo" for="botaoMagico"></label>
+                <div class="buttonBox">
+                    <button class="fas fa-bars" id="botaoMagico" onclick="console.log('menu')"></button>
+                    <button class="fas fa-times" id="botaoMagicoFecha" onclick="console.log('menu')"></button>
+                </div>
+
                 <i class="fas fa-search"></i>
             </section>
             <section class="imagemCapa"></section>
-            <section id="listaMusicas"></section>
-            <section id="playerCorpo"></section>
-        </article>
 
+            <section id="listaMusicas"></section>
+
+            <section id="playerCorpo">
+                <button class="fas fa-play" onclick="console.log('play')"></button>
+            </section>
+        </article>
         <script src="/js/script.js"></script>
     </body>
 </html> 
