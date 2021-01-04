@@ -1,27 +1,41 @@
 console.log('hello world');
 
-let botaoMagico = document.querySelector("#botaoMagico");
-let botaoMagicoFecha = document.querySelector("#botaoMagicoFecha");
-let imagemCapa = document.querySelector(".imagemCapa");
-
 window.onload = function(){
 
-    escondeBotao(botaoMagicoFecha);
+    let botaoMagico = document.querySelector("#botaoMagico");
+    let botaoMagicoFecha = document.querySelector("#botaoMagicoFecha");
+    let imagemCapa = document.querySelector(".imagemCapa");
+
+    ocultaBotao(botaoMagicoFecha);
 
     botaoMagico.addEventListener("click", function () {
 
         minimizaCapa(imagemCapa);
+
         escondeBotao(botaoMagico);
+
         mostraBotao(botaoMagicoFecha);
     } );
 
     botaoMagicoFecha.addEventListener("click", function () {
 
         maximizaCapa(imagemCapa);
+
         escondeBotao(botaoMagicoFecha);
+
         mostraBotao(botaoMagico);
 
     } );
+
+    
+
+
+
+
+    function ocultaBotao(botao) {
+
+        botao.style.display = 'none';
+    }
 
     function minimizaCapa(capa) {
 
@@ -30,14 +44,32 @@ window.onload = function(){
 
     function maximizaCapa(capa) {
 
-        capa.style.backgroundColor = 'rgb(0, 0, 0)';
+        capa.style.backgroundColor = 'rgb(0, 255, 255)';
     }
 
     function escondeBotao(botao) {
-        botao.style.display = 'none';
+        
+        botao.classList.remove('zoonIn');
+
+        botao.classList.add('zoonOut');
+
+        setTimeout(function () {
+
+            botao.style.display = 'none';
+        }, 0200);
+        
     }
 
     function mostraBotao(botao) {
-        botao.style.display = 'block';
+
+        botao.classList.remove('zoonOut');
+
+        botao.classList.add('zoonIn');
+        
+
+        setTimeout(function () {
+
+            botao.style.display = 'block';
+        }, 0300);
     }
 }

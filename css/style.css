@@ -72,7 +72,6 @@ button:active {
 
 .fa-bars:before {
     color: #959595;
-    margin-left: 5vw;
     font-size: 2rem;
     cursor: pointer;
 }
@@ -81,12 +80,28 @@ button:active {
     color: #bbb;
 }
 
+.fa-bars.zoonOut {
+    animation: zoonout .3s ease-in forwards;
+}
+
+@keyframes zoonout {
+    0% {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+
+.fa-bars.zoonIn {
+    animation: zoonin .2s ease-in forwards;
+}
+
+@keyframes zoonin {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
 .fa-times:before {
     color: #959595;
-    margin-left: 5vw;
     font-size: 2rem;
     cursor: pointer;
-    position: absolute;
 }
 
 .fa-times:hover:before {
@@ -103,7 +118,7 @@ button:active {
 
 .imagemCapa {
     width: 100vw;
-    background-color: aqua;
+    background-color: #00ffff;
     transition: all 0.3s ease-in;
 }
 
