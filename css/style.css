@@ -80,8 +80,8 @@ button:active {
     color: #bbb;
 }
 
-.fa-bars.zoonOut {
-    animation: zoonout .3s ease-in forwards;
+.zoonOut {
+    animation: zoonout .2s ease-in forwards;
 }
 
 @keyframes zoonout {
@@ -89,7 +89,7 @@ button:active {
     100% {transform: scale(0);}
 }
 
-.fa-bars.zoonIn {
+.zoonIn {
     animation: zoonin .2s ease-in forwards;
 }
 
@@ -100,7 +100,7 @@ button:active {
 
 .fa-times:before {
     color: #959595;
-    font-size: 2rem;
+    font-size: 2.5rem;
     cursor: pointer;
 }
 

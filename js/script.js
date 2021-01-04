@@ -7,30 +7,25 @@ window.onload = function(){
     let imagemCapa = document.querySelector(".imagemCapa");
 
     ocultaBotao(botaoMagicoFecha);
+ 
+    botaoMagico.addEventListener("click", () => {
 
-    botaoMagico.addEventListener("click", function () {
+            minimizaCapa(imagemCapa);
 
-        minimizaCapa(imagemCapa);
+            escondeBotao(botaoMagico);
 
-        escondeBotao(botaoMagico);
+            mostraBotao(botaoMagicoFecha);
+        } );
 
-        mostraBotao(botaoMagicoFecha);
-    } );
+    botaoMagicoFecha.addEventListener("click", () => {
 
-    botaoMagicoFecha.addEventListener("click", function () {
+            maximizaCapa(imagemCapa);
 
-        maximizaCapa(imagemCapa);
+            escondeBotao(botaoMagicoFecha);
 
-        escondeBotao(botaoMagicoFecha);
+            mostraBotao(botaoMagico);
 
-        mostraBotao(botaoMagico);
-
-    } );
-
-    
-
-
-
+        } );
 
     function ocultaBotao(botao) {
 
@@ -62,14 +57,13 @@ window.onload = function(){
 
     function mostraBotao(botao) {
 
-        botao.classList.remove('zoonOut');
-
-        botao.classList.add('zoonIn');
-        
-
         setTimeout(function () {
 
             botao.style.display = 'block';
-        }, 0300);
+        }, 0200);
+
+        botao.classList.remove('zoonOut');
+
+        botao.classList.add('zoonIn');
     }
 }
