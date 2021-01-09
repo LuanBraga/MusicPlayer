@@ -24,7 +24,6 @@ window.onload = function(){
             escondeBotao(botaoMagicoFecha);
 
             mostraBotao(botaoMagico);
-
         } );
 
     function ocultaBotao(botao) {
@@ -34,12 +33,18 @@ window.onload = function(){
 
     function minimizaCapa(capa) {
 
-        capa.style.backgroundColor = 'rgb(77, 76, 161)';
+        
+        capa.classList.remove('scale-plus');
+        capa.classList.add('scale-minus');
+        /* capa.style.backgroundColor = 'rgb(77, 76, 161)'; */
+        
     }
 
     function maximizaCapa(capa) {
-
-        capa.style.backgroundColor = 'rgb(0, 255, 255)';
+        
+        capa.classList.remove('scale-minus');
+        capa.classList.add('scale-plus');
+       /*  capa.style.backgroundColor = 'rgb(0, 255, 255)'; */
     }
 
     function escondeBotao(botao) {
@@ -48,19 +53,13 @@ window.onload = function(){
 
         botao.classList.add('zoonOut');
 
-        setTimeout(function () {
-
-            botao.style.display = 'none';
-        }, 0200);
+        setTimeout(function() {botao.style.display = 'none';}, 0200);
         
     }
 
     function mostraBotao(botao) {
 
-        setTimeout(function () {
-
-            botao.style.display = 'block';
-        }, 0200);
+        setTimeout(function() {botao.style.display = 'block';}, 0200);
 
         botao.classList.remove('zoonOut');
 

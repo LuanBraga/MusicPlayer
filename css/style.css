@@ -1,5 +1,9 @@
 /* definições gerais */
 
+:root {
+    --icon-size: 2rem;
+}
+
 input[type=checkbox] {
     visibility: hidden;
     margin: 0;
@@ -52,6 +56,7 @@ button:active {
     flex-direction: column;
     background-color: rgb(0, 0, 0);
     overflow: hidden;
+    position: absolute;
 }
 
 /* cabeçalho */
@@ -66,13 +71,15 @@ button:active {
 }
 
 .buttonBox {
-    width: 10vw;
+    width: auto;
     height: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .fa-bars:before {
     color: #959595;
-    font-size: 2rem;
+    font-size: var(--icon-size);
     cursor: pointer;
 }
 
@@ -100,7 +107,7 @@ button:active {
 
 .fa-times:before {
     color: #959595;
-    font-size: 2.5rem;
+    font-size: calc(var(--icon-size) + .5rem);
     cursor: pointer;
 }
 
@@ -109,18 +116,72 @@ button:active {
 }
 
 .fa-search:before {
-    margin-right: 5vw;
-    font-size: 2rem;
+    font-size: var(--icon-size);
+    color: black;
     cursor: pointer;
 }
 
 /* fim cabeçalho */
+
+/* imagem capa */
 
 .imagemCapa {
     width: 100vw;
     background-color: #00ffff;
     transition: all 0.3s ease-in;
 }
+
+.scale-minus {
+    position: relative;
+    z-index: 0;
+    animation: scaleminus .3s ease-in forwards;
+}
+
+/* @keyframes scaleminus {
+
+    0% {
+        transform: scale(1, 1);
+        bottom: 0%;
+        right: 0%;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: scale(.2, .3);
+        bottom: 23%;
+        right: 34%;
+        border-radius: 5rem;
+    }
+} */
+
+
+
+.scale-plus {
+    position: relative;
+    z-index: 0;
+    animation: scaleplus .2s ease-in forwards;
+}
+
+/* @keyframes scaleplus {
+
+    0% {
+        transform: scale(.2, .3);
+        bottom: 23%;
+        right: 34%;
+        border-radius: 5rem;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        bottom: 0%;
+        right: 0%;
+        border-radius: 0;
+    }
+} */
+
+
+
+/* fim imagem capa */
 
 /* barra player */
 
@@ -139,15 +200,14 @@ button:active {
 }
 
 .fa-play::before {
-    font-size: 2rem;
+    font-size: var(--icon-size);
 }
 
 /* fim barra player */
 
 
 /* declaraçoes media queries */
-
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 400px) {
     
     .cabecalho {
         height: 10vh;
@@ -161,6 +221,90 @@ button:active {
         height: 40vh;
     }
     
+    @keyframes scaleminus {
+
+        0% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    
+        100% {
+            transform: scale(.4, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 3rem;
+        }
+    }
+
+    @keyframes scaleplus {
+
+        0% {
+            transform: scale(.4, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 5rem;
+        }
+    
+        100% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 401px) {
+    
+    .cabecalho {
+        height: 10vh;
+    }
+    
+    .imagemCapa {
+        height: 60vh;
+    }
+    
+    #playerCorpo {
+        height: 40vh;
+    }
+    
+    @keyframes scaleminus {
+
+        0% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    
+        100% {
+            transform: scale(.4, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 3rem;
+        }
+    }
+
+    @keyframes scaleplus {
+
+        0% {
+            transform: scale(.4, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 5rem;
+        }
+    
+        100% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    }
+
 }
 
 @media only screen and (min-width: 600px) {
@@ -175,6 +319,40 @@ button:active {
     
     #playerCorpo {
         height: 20vh;
+    }
+
+    @keyframes scaleminus {
+
+        0% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    
+        100% {
+            transform: scale(.3, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 3rem;
+        }
+    }
+
+    @keyframes scaleplus {
+
+        0% {
+            transform: scale(.3, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 5rem;
+        }
+    
+        100% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
     }
 
 }
@@ -192,6 +370,40 @@ button:active {
     #playerCorpo {
         height: 20vh;
     }
+
+    @keyframes scaleminus {
+
+        0% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    
+        100% {
+            transform: scale(.3, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 3rem;
+        }
+    }
+
+    @keyframes scaleplus {
+
+        0% {
+            transform: scale(.3, .3);
+            bottom: 10%;
+            right: 25%;
+            border-radius: 5rem;
+        }
+    
+        100% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    }
     
 }
 
@@ -208,6 +420,41 @@ button:active {
     #playerCorpo {
         height: 10vh;
     }
+
+    @keyframes scaleminus {
+
+        0% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    
+        100% {
+            transform: scale(.2, .3);
+            bottom: 23%;
+            right: 34%;
+            border-radius: 5rem;
+        }
+    }
+
+    @keyframes scaleplus {
+
+        0% {
+            transform: scale(.2, .3);
+            bottom: 23%;
+            right: 34%;
+            border-radius: 5rem;
+        }
+    
+        100% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    }
+
 }
 
 @media only screen and (min-width: 1800px) {
@@ -224,6 +471,39 @@ button:active {
         height: 10vh;
     }
     
+    @keyframes scaleminus {
+
+        0% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    
+        100% {
+            transform: scale(.2, .4);
+            bottom: 23%;
+            right: 34%;
+            border-radius: 5rem;
+        }
+    }
+
+    @keyframes scaleplus {
+
+        0% {
+            transform: scale(.2, .4);
+            bottom: 23%;
+            right: 34%;
+            border-radius: 5rem;
+        }
+    
+        100% {
+            transform: scale(1, 1);
+            bottom: 0%;
+            right: 0%;
+            border-radius: 0;
+        }
+    }
 }
 
 /* fim declaraçoes media queries */
