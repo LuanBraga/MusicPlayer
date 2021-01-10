@@ -5,6 +5,7 @@ window.onload = function(){
     let botaoMagico = document.querySelector("#botaoMagico");
     let botaoMagicoFecha = document.querySelector("#botaoMagicoFecha");
     let imagemCapa = document.querySelector(".imagemCapa");
+    let telaFundo = document.querySelector(".tela");
 
     ocultaBotao(botaoMagicoFecha);
  
@@ -15,6 +16,8 @@ window.onload = function(){
             escondeBotao(botaoMagico);
 
             mostraBotao(botaoMagicoFecha);
+
+            setTimeout(function() {telaFundo.classList.add("tela-background-color")}, 0300);
         } );
 
     botaoMagicoFecha.addEventListener("click", () => {
@@ -24,6 +27,8 @@ window.onload = function(){
             escondeBotao(botaoMagicoFecha);
 
             mostraBotao(botaoMagico);
+
+            setTimeout(function() {telaFundo.classList.remove("tela-background-color")}, 0300);
         } );
 
     function ocultaBotao(botao) {
@@ -36,7 +41,7 @@ window.onload = function(){
         
         capa.classList.remove('scale-plus');
         capa.classList.add('scale-minus');
-        /* capa.style.backgroundColor = 'rgb(77, 76, 161)'; */
+        capa.style.backgroundColor = 'rgb(24, 23, 109)';
         
     }
 
@@ -44,7 +49,7 @@ window.onload = function(){
         
         capa.classList.remove('scale-minus');
         capa.classList.add('scale-plus');
-       /*  capa.style.backgroundColor = 'rgb(0, 255, 255)'; */
+        capa.style.backgroundColor = 'rgb(0, 255, 255)';
     }
 
     function escondeBotao(botao) {
