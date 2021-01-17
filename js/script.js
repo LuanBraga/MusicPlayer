@@ -6,6 +6,8 @@ window.onload = function(){
     let botaoMagicoFecha = document.querySelector("#botaoMagicoFecha");
     let imagemCapa = document.querySelector(".imagemCapa");
     let telaFundo = document.querySelector(".tela");
+    let secaoLista = document.querySelector(".listaMusicas");
+
 
     ocultaBotao(botaoMagicoFecha);
  
@@ -17,6 +19,8 @@ window.onload = function(){
 
             mostraBotao(botaoMagicoFecha);
 
+            mostraSecaoLista(secaoLista);
+
             setTimeout(function() {telaFundo.classList.add("tela-background-color")}, 0300);
         } );
 
@@ -27,6 +31,8 @@ window.onload = function(){
             escondeBotao(botaoMagicoFecha);
 
             mostraBotao(botaoMagico);
+
+            escondeSecaoLista(secaoLista);
 
             setTimeout(function() {telaFundo.classList.remove("tela-background-color")}, 0300);
         } );
@@ -69,5 +75,17 @@ window.onload = function(){
         botao.classList.remove('zoonOut');
 
         botao.classList.add('zoonIn');
+    }
+
+    function mostraSecaoLista(secaoLista) {
+        
+        secaoLista.classList.remove('listaMusicasClose');
+        secaoLista.classList.add('listaMusicasOpen');
+    }
+
+    function escondeSecaoLista(secaoLista) {
+
+        secaoLista.classList.add('listaMusicasClose');
+        secaoLista.classList.remove('listaMusicasOpen');
     }
 }
